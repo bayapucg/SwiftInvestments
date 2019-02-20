@@ -64,7 +64,7 @@ class Gallery extends Back_end {
 		{
 			$admindetails=$this->session->userdata('multi_details');
 			$post=$this->input->post();
-			//echo '<pre>';print_r($_FILES);exit;
+			//echo '<pre>';print_r($post);exit;
 			$cnt='';if(isset($_FILES['image']['tmp_name']) && count($_FILES['image']['tmp_name'])>0){
 				$cnt=1;foreach ($_FILES['image']['tmp_name'] as $key => $val ) {
 					if($_FILES["image"]["name"][$key]!=''){
@@ -74,6 +74,7 @@ class Gallery extends Back_end {
 						$add_data=array(
 						'image'=>$image1[$cnt],
 						'text'=>isset($post['text'][$key])?$post['text'][$key]:'',
+						'content'=>isset($post['content'][$key])?$post['content'][$key]:'',
 						'org_image'=>isset($_FILES['image']['name'][$key])?$_FILES['image']['name'][$key]:'',
 						'status'=>1,
 						'create_at'=>date('Y-m-d H:i:s'),
@@ -86,6 +87,7 @@ class Gallery extends Back_end {
 					}
 						// here your insert query
 					$cnt++;}
+					//exit;
 					if(count($save)>0){
 							$this->session->set_flashdata('success','Image successfully added');
 							redirect('gallery/lists');
