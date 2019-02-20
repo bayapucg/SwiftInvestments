@@ -18,6 +18,9 @@
                                 <th class="text-center">
                                     Service Name
                                 </th>
+								<th class="text-center">
+                                    Content
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,6 +31,11 @@
                                 <td class="form-group">
                                     <input type="text" name='text[]' placeholder='Enter Title' class="form-control" />
                                 </td>
+								 <td class="form-group">
+                                    <textarea type="text" rows="4" cols="50" class="form-control" placeholder="Enter Content" name="content[]"  ></textarea>
+                                </td>
+								
+								
                             </tr>
                             <tr id='addr1'></tr>
                         </tbody>
@@ -49,7 +57,7 @@
     $(document).ready(function() {
         var i = 1;
         $("#add_row").click(function() {
-            $('#addr' + i).html("<td class='form-group'><input name='image[]' type='file'  class='form-control input-md'  /> </td><td class='form-group'><input  name='text[]' type='text' placeholder='Enter Title'  class='form-control input-md'></td>");
+            $('#addr' + i).html("<td class='form-group'><input name='image[]' type='file'  class='form-control input-md'  /> </td><td class='form-group'><input  name='text[]' type='text' placeholder='Enter Title'  class='form-control input-md'></td><td class='form-group'><textarea  name='content[]' type='text' placeholder='Enter Content'  class='form-control input-md'></textarea></td>");
 
             $('#tab_logic').append('<tr id="addr' + (i + 1) + '"></tr>');
             i++;
@@ -77,6 +85,14 @@
                         }
                     }
                 },
+				'content[]': {
+                    validators: {
+                        notEmpty: {
+                            message: 'Content is required'
+                        }
+                    }
+                },
+				
                 'image[]': {
                     validators: {
                         notEmpty: {
