@@ -23,10 +23,14 @@ Contact Us
         <div class="row contact-info">
             
             <div class="col-md-8">
-                <div class="section-header">
-                    <h3>Contact Us</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-                </div>
+                
+        <div class="section-heading">
+                    <h2>Contact <span >us</span></h2>
+                    <span>
+                        <img src="<?php echo base_url(); ?>assets/vendor/img/head-icon.png" alt="icon">
+                    </span>
+               
+			</div>
                 <div class="form">
                     <div id="sendmessage">Your message has been sent. Thank you!</div>
                     <div id="errormessage"></div>

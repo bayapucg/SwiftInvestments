@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label>Paragraph</label>
+                        <label>COMMITTED</label>
                         <textarea class="form-control" rows="5" name="parahraph" id="parahraph"><?php echo isset($detail['parahraph'])?$detail['parahraph']:''; ?></textarea>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
 
                 <div class="col-md-4">
 
-                    <h4 class="text-primary">Our Mission</h4>
+                    <h4 class="text-primary">ACCOUNTABLE</h4>
                     <div class="form-group">
                         <label>Upload Image</label>
                         <input type="file" name="image1" id="image1" class="form-control">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-md-4">
 
-                    <h4 class="text-primary">Our Plan</h4>
+                    <h4 class="text-primary">RESPECT</h4>
                     <div class="form-group">
                         <label>Upload Image</label>
                         <input type="file" name="image2" id="image2" class="form-control">

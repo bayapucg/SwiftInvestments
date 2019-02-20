@@ -216,9 +216,9 @@
             display: none;
         }
     </style>   
-    <button class="btn btn-primary" id="chat_btn">
+    <!--<button class="btn btn-primary" id="chat_btn">
         <i class="fa fa-comment"></i> Chat
-    </button>
+    </button>-->
     <div class="chat_box">
         <div class="chat_window">
             <div class="top_menu">

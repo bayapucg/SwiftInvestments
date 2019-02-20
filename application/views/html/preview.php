@@ -37,15 +37,47 @@
     <!--==========================
     Header
     ============================-->
+	  <div style="background:#f5f5f5;padding:15px 10px;border-top:4px solid #fccd4d;height:125px;">
+    <div class="container">
+    <div class="row">
+		<div class="col-md-4 sm-hide">
+				<div class="row">
+				<div class="col-md-3">
+					<div style="background:#fccd4d;height:60px;width:60px;border-radius:50%;text-align:center;line-height:73px;color:#fff;">
+					<i style="font-size:40px;" class="fa fa-map-marker" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<p><?php echo isset($contactus_details['address'])?$contactus_details['address']:''; ?></p>
+				</div>
+				
+			</div>
+		</div>
+		<div class="col-md-4">
+			  <?php if(isset($logo_details['image']) && $logo_details['image']!=''){ ?>
+                    <img style="height:80px;width:auto;margin:0 auto;" src="<?php echo base_url('assets/logo/'.$logo_details['image']); ?>" alt="<?php echo isset($logo_details['org_image'])?$logo_details['org_image']:''; ?>">
+                    <?php }else{ ?>
+                    <img style="height:80px;width:auto; margin:0 auto;" src="<?php echo base_url(); ?>assets/vendor/admin/img/logo.png" alt="Logo">
+                    <?php } ?>
+		</div>
+		<div class="col-md-4 sm-hide">
+			<h4 style="margin-bottom:5px">GET IN TOUCH</h4>
+			<div><i class="fa fa-envelope" aria-hidden="true"></i> : info@swiftInvestments.com</div>
+			<div><i class="fa fa-globe" aria-hidden="true"></i>
+ : <?php echo isset($contactus_details['email'])?$contactus_details['email']:''; ?></div>
+		</div>
+	</div>
+	</div>
+	</div>
     <header id="header" class="">
-        <div class="container-fluid">
-            <div id="logo" class="pull-left logo-header">
+        <div class="bg">
+           <!-- <div id="logo" class="pull-left logo-header">
                 <?php if($logo_details['image']==''){ ?>
                 <img src="<?php echo base_url(); ?>assets/vendor/img/logo.png" alt="logo" height="70px">
                 <?php }else{ ?>
                 <img src="<?php echo base_url('assets/logo/'.$logo_details['image']); ?>" alt="logo" height="70px">
                 <?php } ?>
-            </div>
+            </div>-->
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="#intro">Home</a></li>
@@ -56,7 +88,7 @@
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
-    </header><!-- #header -->
+    </header>
 
     
     <!--==========================
@@ -120,84 +152,35 @@
             <?php if(isset($aboutus_details) && count($aboutus_details)>0){ ?>
             <section id="about">
                 <div class="container">
-
-                    <header class="section-header">
-                        <h3>About Us</h3>
-                        <p>
+					<div class="section-heading">
+                    <h2>About <span>Us</span></h2>
+                    <span>
+                        <img src="<?php echo base_url(); ?>assets/vendor/img/head-icon.png" alt="icon">
+                    </span><p>
                             <?php echo isset($aboutus_details['parahraph'])?$aboutus_details['parahraph']:''; ?>
-                        </p>
-                    </header>
+                        </p>               
+			</div>
+                    
                     <input type="hidden" name="about_us_a_id" id="about_us_a_id" value="<?php echo isset($aboutus_details['a_id'])?$aboutus_details['a_id']:''; ?>">
 
-                    <div class="row about-cols">
-                        <div class="col-md-4 wow fadeInUp">
-                            <div class="about-col">
-                                <div class="img">
-                                    <img src="<?php echo base_url('assets/aboutus/'.$aboutus_details['image1']); ?>" alt="<?php echo isset($aboutus_details['image1'])?$aboutus_details['image1']:''; ?>" class="img-fluid">
-                                    <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-                                </div>
-                                <h2 class="title"><a href="#">Our Mission</a></h2>
-                                <p>
-                                    <?php echo isset($aboutus_details['paragraph1'])?$aboutus_details['paragraph1']:''; ?>.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="about-col">
-                                <div class="img">
-                                    <img src="<?php echo base_url('assets/aboutus/'.$aboutus_details['image2']); ?>" alt="<?php echo isset($aboutus_details['image2'])?$aboutus_details['image2']:''; ?>" class="img-fluid">
-                                    <div class="icon"><i class="ion-ios-list-outline"></i></div>
-                                </div>
-                                <h2 class="title"><a href="#">Our Plan</a></h2>
-                                <p>
-                                    <?php echo isset($aboutus_details['paragraph2'])?$aboutus_details['paragraph2']:''; ?>.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="about-col">
-                                <div class="img">
-                                    <img src="<?php echo base_url('assets/aboutus/'.$aboutus_details['image3']); ?>" alt="<?php echo isset($aboutus_details['image3'])?$aboutus_details['image3']:''; ?>" class="img-fluid">
-                                    <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-                                </div>
-                                <h2 class="title"><a href="#">Our Vision</a></h2>
-                                <p>
-                                    <?php echo isset($aboutus_details['paragraph3'])?$aboutus_details['paragraph3']:''; ?>.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
+                   
 
                 </div>
             </section><!-- #about -->
             <?php } ?>
 
-            
-            <!--==========================
-            Call To Action Section
-            ============================-->
-            <section id="call-to-action" class="wow fadeIn">
-                <div class="container text-center">
-                    <h3>Our offer sounds interesting?</h3>
-                    <p>Feel free to contact us now, we are at your service 24/7. There are many ways you can contact us - visit our contact page.</p>
-                    <a class="cta-btn" href="#contact">Call Us Now</a>
-                </div>
-            </section><!-- #call-to-action -->
-            
-            
-            <!--==========================
-            Our Services
-            ============================-->
+       
             <?php if(isset($gallery_details) && count($gallery_details)>0){ ?>
-            <section id="portfolio" class="section-bg">
+            <section id="portfolio" class="section-bg" style=" background: url(<?php echo base_url('assets/vendor/img/servicesbac.png');?>);">
                 <div class="container">
 
-                    <header class="section-header">
-                        <h3 class="section-title">Our Services</h3>
-                    </header>
+                   <div class="section-heading">
+                    <h2>Our <span style="color:#fff">Services</span></h2>
+                    <span>
+                        <img src="<?php echo base_url(); ?>assets/vendor/img/head-icon.png" alt="icon">
+                    </span>
+               
+			</div>
                     <div class="row portfolio-container">
                         <?php foreach($gallery_details as $list){ ?>
                         <input type="hidden" name="gallery_id[]" id="gallery_id" value="<?php echo isset($list['g_id'])?$list['g_id']:''; ?>">
@@ -206,7 +189,7 @@
                             <div class="portfolio-wrap">
                                 <figure>
                                     <img src="<?php echo base_url('assets/gallery/'.$list['image']); ?>" class="img-fluid" alt="<?php echo isset($list['org_image'])?$list['org_image']:''; ?>">
-                                    <a href="<?php echo base_url('assets/gallery/'.$list['image']); ?>" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="<?php echo base_url('assets/gallery/'.$list['image']); ?>" data-lightbox="portfolio" data-title=" <?php echo isset($list['text'])?$list['text']:''; ?>" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                 </figure>
                                 <div class="portfolio-info">
                                     <h4>
@@ -229,9 +212,12 @@
             <section id="testimonials" class="wow fadeInUp">
                 <div class="container">
 
-                    <header class="section-header">
-                        <h3>Our Team</h3>
-                    </header>
+                   <div class="section-heading">
+				<h2>Our <span>Team</span></h2>
+				<span>
+					<img src="<?php echo base_url(); ?>assets/vendor/img/head-icon.png" alt="icon">
+				</span>
+			</div>
                     <div class="owl-carousel testimonials-carousel">
                         <?php foreach($testimonials_details as $list){ ?>
 
@@ -256,74 +242,7 @@
             <?php } ?>
 
             
-            <!--==========================
-            Contact Us
-            ============================-->
-            <section id="contact" class="section-bg wow fadeInUp">
-                <div class="container">
-                    <div class="section-header">
-                        <h3>Contact Us</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-                    </div>
-                    <input type="hidden" name="contactus_details_id" id="contactus_details_id" value="<?php echo isset($contactus_details['c_id'])?$contactus_details['c_id']:''; ?>">
-
-                    <div class="row contact-info">
-
-                        <div class="col-md-4">
-                            <div class="contact-address">
-                                <i class="ion-ios-location-outline"></i>
-                                <h3>Address</h3>
-                                <address>
-                                    <?php echo isset($contactus_details['address'])?$contactus_details['address']:''; ?></address>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="contact-phone">
-                                <i class="ion-ios-telephone-outline"></i>
-                                <h3>Phone Number</h3>
-                                <p><a href="tel:+155895548855">
-                                        <?php echo isset($contactus_details['phone'])?$contactus_details['phone']:''; ?></a></p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="contact-email">
-                                <i class="ion-ios-email-outline"></i>
-                                <h3>Email</h3>
-                                <p><a href="mailto:info@example.com">
-                                        <?php echo isset($contactus_details['email'])?$contactus_details['email']:''; ?></a></p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="form">
-                        <div id="sendmessage">Your message has been sent. Thank you!</div>
-                        <div id="errormessage"></div>
-                        <!--<form id="defaultForm" action="<?php echo base_url('preview/contactpost'); ?>" method="post" role="form" class="">-->
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
-                                <div class="validation"></div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
-                                <div class="validation"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-                            <div class="validation"></div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-                            <div class="validation"></div>
-                        </div>
-                        <div><button type="submit" class="btn btn-success" name="submit">Send Message</button></div>
-                    </div>
-                </div>
-            </section><!-- #contact -->
+         
         </main>
 
         

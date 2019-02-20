@@ -34,19 +34,49 @@
 
 <body>
 
-    <!--==========================
-    Header
-    ============================-->
+    <div style="background:#f5f5f5;padding:15px 10px;border-top:4px solid #fccd4d;height:125px;">
+    <div class="container">
+    <div class="row">
+		<div class="col-md-4 sm-hide">
+				<div class="row">
+				<div class="col-md-3">
+					<div style="background:#fccd4d;height:60px;width:60px;border-radius:50%;text-align:center;line-height:73px;color:#fff;">
+					<i style="font-size:40px;" class="fa fa-map-marker" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<p><?php echo isset($contactus_details['address'])?$contactus_details['address']:''; ?></p>
+				</div>
+				
+			</div>
+		</div>
+		<div class="col-md-4">
+			  <?php if(isset($logo_details['image']) && $logo_details['image']!=''){ ?>
+                    <img style="height:80px;width:auto;margin:0 auto;" src="<?php echo base_url('assets/logo/'.$logo_details['image']); ?>" alt="<?php echo isset($logo_details['org_image'])?$logo_details['org_image']:''; ?>">
+                    <?php }else{ ?>
+                    <img style="height:80px;width:auto; margin:0 auto;" src="<?php echo base_url(); ?>assets/vendor/admin/img/logo.png" alt="Logo">
+                    <?php } ?>
+		</div>
+		<div class="col-md-4 sm-hide">
+			<h4 style="margin-bottom:5px">GET IN TOUCH</h4>
+			<div><i class="fa fa-envelope" aria-hidden="true"></i> : <?php echo isset($contactus_details['email'])?$contactus_details['email']:''; ?></div>
+			<div><i class="fa fa-globe" aria-hidden="true"></i>
+ : swiftInvestments.com</div>
+		</div>
+	</div>
+	</div>
+	</div>
     <header id="header" class="">
-        <div class="container">
+			
+        <div class="">
             <div class="bg">
-                <div id="logo" class="pull-left logo-header">
+                <!--<div id="logo" class="pull-left logo-header">
                     <?php if(isset($logo_details['image']) && $logo_details['image']!=''){ ?>
                     <img class="" src="<?php echo base_url('assets/logo/'.$logo_details['image']); ?>" alt="<?php echo isset($logo_details['org_image'])?$logo_details['org_image']:''; ?>">
                     <?php }else{ ?>
                     <img class="" src="<?php echo base_url(); ?>assets/vendor/admin/img/logo.png" alt="Logo">
                     <?php } ?>
-                </div>
+                </div>-->
 
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">

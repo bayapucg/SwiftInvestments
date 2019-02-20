@@ -18,12 +18,16 @@
 Our Services
 ============================-->
 <?php if(isset($gallery_details) && count($gallery_details)>0){ ?>
-<section id="portfolio" class="section-bg">
+<section id="portfolio" class="section-bg" style="background:#f5f5f5" >
     <div class="container">
 
-        <div class="section-header">
-            <h3 class="section-title">Our Services</h3>
-        </div>
+        <div class="section-heading">
+                    <h2>Our <span >Services</span></h2>
+                    <span>
+                        <img src="<?php echo base_url(); ?>assets/vendor/img/head-icon.png" alt="icon">
+                    </span>
+               
+			</div>
         <div class="row portfolio-container">
             <?php foreach($gallery_details as $list){ ?>
             <input type="hidden" name="gallery_id[]" id="gallery_id" value="<?php echo isset($list['g_id'])?$list['g_id']:''; ?>">
