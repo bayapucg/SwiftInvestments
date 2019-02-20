@@ -61,7 +61,7 @@
 			<h4 style="margin-bottom:5px">GET IN TOUCH</h4>
 			<div><i class="fa fa-envelope" aria-hidden="true"></i> : <?php echo isset($contactus_details['email'])?$contactus_details['email']:''; ?></div>
 			<div><i class="fa fa-globe" aria-hidden="true"></i>
- : swiftInvestments.com</div>
+ : swiftinvestmentsltd.com</div>
 		</div>
 	</div>
 	</div>

@@ -59,10 +59,7 @@
                 &copy; Copyright <strong>
                     <?php echo isset($logo_details['title'])?$logo_details['title']:'Pracha Multi'; ?></strong>. All Rights Reserved
             </div>
-            <div class="credits">
-
-                Designed by <a href="https://prachatech.com/">prachatech</a>
-            </div>
+            
         </div>
     </footer><!-- #footer -->
 
